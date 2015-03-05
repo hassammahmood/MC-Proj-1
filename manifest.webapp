@@ -1,0 +1,13 @@
+{
+	"name" : "Cric Quiz",
+	"description" : "Cric Quiz App - Great for General Knowledge and Testing",
+	"launch_path" : "home.html",
+	"icons" : {
+		"128" : "/img/quizapplogo.png"
+	},
+	"developer" :{
+		"name" : "Anthony Allan Conda",
+		"url" : "https://facebook.com/allan.conda"
+	},
+	"default_locale": "en"
+}

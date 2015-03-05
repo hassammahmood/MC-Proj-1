@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <title>Cric Quiz</title>
+  <link rel="shortcut icon" href="img/favicon.ico">
+  
+  <!-- https://d10ajoocuyu32n.cloudfront.net/mobile/1.3.1/jquery.mobile-1.3.1.min.css -->
+  <link rel="stylesheet" href="CSS Files/jquery.mobile-1.3.1.min.css">
+  
+  <!-- Extra Codiqa features -->
+  <link rel="stylesheet" href="CSS Files/quizStyle.css">
+  
+  <!-- jQuery and jQuery Mobile -->
+  <!-- https://d10ajoocuyu32n.cloudfront.net/jquery-1.9.1.min.js -->
+  <script src="JS Files/jquery-1.9.1.min.js"></script>
+  <!-- https://d10ajoocuyu32n.cloudfront.net/mobile/1.3.1/jquery.mobile-1.3.1.min.js -->
+  <script src="JS Files/jquery.mobile-1.3.1.min.js"></script>
+
+  <!-- Extra Codiqa features -->
+  <!-- https://d10ajoocuyu32n.cloudfront.net/codiqa.ext.js -->
+  <script src="JS Files/quizStyle.js"></script>
+  <script src="JS Files/checkQuiz.js"></script>
+  <script src="JS Files/quizManipulation.js"></script>
+</head>
+<body>
+  <!-- Home Page -->
+  <div data-role="page" id="home">
+      <div data-role="content">
+      		<div class="ui-grid-b" align="center">
+          	<img src="img/logo.png">
+            </div>
+            <br>
+          <a class="button" id="playButton" data-role="button" data-theme="a" data-transition="pop"
+          href="#selectionpage" data-icon="check" data-iconpos="left">
+              Play a Quiz
+          </a>
+          <a class="button" id="addQuizButton" data-role="button" data-theme="b" data-transition="pop"
+          href="#addpage" data-icon="plus" data-iconpos="left">
+              Add a Quiz
+          </a>
+          <a class="button" id="editQuizButton" data-role="button" data-theme="e" data-transition="pop"
+          href="#selectionpage" data-icon="edit" data-iconpos="left">
+              Edit a Quiz
+          </a>
+      </div>
+      <div class="footer" id="homeFooter" data-theme="a" data-role="footer"
+      data-position="fixed">
+          <h3>
+              Copyrights &copy; 2015. All Rights Reserved
+          </h3>
+      </div>
+  </div>
+
+  <!-- Quiz Page -->
+  <div data-role="page" id="quizpage">
+      <div class="header" id="quizHeader" data-theme="a" data-role="header"
+      data-position="fixed">
+          <h3>
+              Quiz Title Here
+          </h3>
+      </div>
+      <div id="quiz" data-role="content">
+          <label for="item">
+              Question n of m
+          </label>
+          <div id="item" data-role="fieldcontain">
+              <fieldset data-role="controlgroup">
+                <legend id="question">
+                  <!-- question goes here -->
+                </legend>
+                <input class="optionsRadio" id="radio1" name="item" data-theme="b" type="radio">
+                <label for="radio1">
+                    Option 1
+                </label>
+                <input class="optionsRadio" id="radio2" name="item" data-theme="b" type="radio">
+                <label for="radio2">
+                    Option 2
+                </label>
+                <input class="optionsRadio" id="radio3" name="item" data-theme="b" type="radio">
+                <label for="radio3">
+                    Option 3
+                </label>
+                <input class="optionsRadio" id="radio4" name="item" data-theme="b" type="radio">
+                <label for="radio4">
+                    Option 4
+                </label>
+              </fieldset>
+          </div>
+          
+          <a class="button" id="finalAnswer" data-role="button" data-transition="none"
+          data-theme="a" href="#quiz" data-icon="check" data-iconpos="left">
+              Final Answer
+          </a>
+      </div>
+      <div class="footer" id="homeFooter" data-theme="a" data-role="footer"
+      data-position="fixed">
+          <div class="navbar" id="quizNavbar" data-role="navbar" data-iconpos="left">
+              <ul>
+                  <li>
+                      <a id="restart" name="restart" href="#" data-transition="fade" data-theme="a" data-icon="back">
+                          Restart
+                      </a>
+                  </li>
+                  <li>
+                      <a data-rel="back" data-transition="fade" href="#selectionpage" data-theme="a" data-icon="arrow-l">
+                          Back to Quizzes
+                      </a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+
+  <!-- Add Page -->
+  <div data-role="page" id="addpage">
+      <div data-theme="a" data-role="header">
+          <h3 class="header" id="addHeader">
+              Add a Quiz
+          </h3>
+      </div>
+      <div data-role="content">
+          <h1>
+              Give a title for the Quiz?
+          </h1>
+          <div data-role="fieldcontain">
+              <input name="titleField" id="titleField" class="field" placeholder="My Quiz" value=""
+              type="text">
+          </div>
+      </div>
+      <div data-theme="a" data-role="footer" data-position="fixed">
+          <div class="navbar" id="addNavbar" data-role="navbar" data-iconpos="left">
+              <ul>
+                  <li>
+                      <a href="#editpage" data-transition="slide" data-theme="" data-icon="arrow-r" data-transition="flow">
+                          Next
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#home" data-transition="flow" data-direction="reverse" data-theme="" data-icon="delete" data-transition="flow">
+                          Cancel
+                      </a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+
+  <!-- Select Quiz Page -->
+  <div data-role="page" id="selectionpage">
+      <div data-theme="a" data-role="header">
+          <h1 class="header" id="selectionHeader">
+              Select a Quiz
+          </h1>
+      </div>
+      <div data-role="content">
+        <!-- Quiz list here -->
+        <ol id="quizList" data-role="listview" data-filter="true" data-filter-placeholder="Filter Quizzes..." data-divider-theme="b" data-inset="true">
+        </ol>
+      </div>
+      <div data-theme="a" data-role="footer" data-position="fixed">
+          <div class="navbar" id="selectionNavbar" data-role="navbar" data-iconpos="left">
+              <ul>
+                  <li>
+                      <a href="#home" data-transition="flow" data-direction="reverse" data-theme="" data-icon="arrow-l" data-transition="flow">
+                          Back
+                      </a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+
+  <!-- Edit Page -->
+  <div data-role="page" id="editpage">
+      <div data-theme="a" data-role="header">
+          <h3 class="header" id="editHeader">
+              Edit Quiz
+          </h3>
+      </div>
+      <div data-role="content">
+          <h2 class="heading" id="quizTitleHeading">
+              Quiz Title Here
+          </h2>
+          <div id="editButtonsContainer">
+            <a id="addItemButton" data-role="button" href="#">
+                Add an Item
+            </a>
+            <a id="deleteItemsButton" data-role="button" href="#">
+                Delete All Items
+            </a>
+             <a id="deleteQuizButton" data-role="button" href="#selectionpage">
+                Delete Quiz
+            </a>
+          </div>
+          <!-- item list -->
+          <h4 class="subheading" id="editSubheading" hidden="true">
+            Items
+          </h4>
+          <div id="itemButtons">
+            <!-- Item Buttons Here -->
+          </div>
+          <!-- fieldset for adding/editing items -->
+          <fieldset id="addFieldset" name="addFieldset" hidden="true">
+            <div data-role="fieldcontain">
+              <label for="questionField">
+                  Question
+              </label>
+
+              <input name="questionField" id="questionField" placeholder="What is the question?"
+              value="" data-mini="true" type="text">
+            </div>
+
+            <label for="answerField">
+              Answer
+            </label>
+            <input name="answerField" id="answerField" placeholder="Enter answer here..."
+            value="" data-mini="true" type="text">
+
+            <label for="choicesField">
+                  Other Choices
+            </label>
+            
+            <input name="choiceField1" id="choiceField1" placeholder="Enter a choice"
+            value="" data-mini="true" type="text">
+
+            <input name="choiceField2" id="choiceField2" placeholder="Enter a choice"
+            value="" data-mini="true" type="text">
+
+            <input name="choiceField3" id="choiceField3" placeholder="Enter a choice"
+            value="" data-mini="true" type="text">
+
+            <a class="saveItemButton" id="saveItemButton" data-role="button" data-inline="true"
+            data-transition="none" data-theme="b" href="#" data-icon="plus" data-iconpos="left">
+                Save
+            </a>
+            <a class="cancelAddItemButton" id="cancelAddItemButton" data-role="button"
+            data-inline="true" data-transition="none" data-theme="e" href="#" data-icon="delete"
+            data-iconpos="left">
+                Cancel
+            </a>
+            <p id="cantsave" hidden="true">Can't save. Please fill out all fields</p>
+          </fieldset>
+      </div>
+
+      <div data-theme="a" data-role="footer" data-position="fixed">
+          <div class="navbar" id="editNavbar" data-role="navbar" data-iconpos="left">
+              <ul>
+                  <li>
+                      <a id="saveQuizButton" href="#selectionpage" data-transition="fade" data-theme="" data-icon="check">
+                          Save
+                      </a>
+                  </li>
+                  <li>
+                      <a id="editBackButton" data-rel="back" data-transition="fade" data-direction="reverse" data-theme="" data-icon="arrow-l">
+                          Back
+                      </a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</body>
+</html>

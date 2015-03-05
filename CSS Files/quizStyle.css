@@ -1,0 +1,20 @@
+/* Put your custom CSS here */
+#addFieldset{
+	border-radius: 20px;
+	border: 1px solid #BDBDBD;
+	box-shadow: 0px 5px 5px #BDBDBD;
+	padding: 0px 10px 0px 10px;
+}
+
+h1 , h2, h3, h4{
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+h4{
+	margin-left: 15px;
+}
+
+p {
+	color: #ff0000;
+}

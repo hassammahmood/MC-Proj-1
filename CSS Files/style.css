@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+
+.ui-grid-b img {
+    max-width : 50%;
+    height : auto;
+}
+
+/*.ui-page.ui-body-c {
+    background: url(img/background.jpg);
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:cover;  
+}
+   
+.ui-body-c, .ui-overlay-c { 
+     background: none;
+}*/
