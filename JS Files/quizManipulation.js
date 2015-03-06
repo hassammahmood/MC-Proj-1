@@ -63,6 +63,7 @@ $(document).ready(function (){
 			}
 			$('#quizButton'+(i+1)).on('click',function (){				
 				quiz = JSON.parse(localStorage.getItem($(this).text().replace($(this).find("span").text(),"")));
+				$('#quizTitle').text(quiz.title);
 			})
 		}
 	}
@@ -112,7 +113,7 @@ $(document).ready(function (){
 		placeOptions();
 
 		$(':checked').attr( "checked", false );
-			$('.optionsRadio').checkboxradio('refresh');
+		$('.optionsRadio').checkboxradio('refresh');
 		
 	}
 
@@ -303,6 +304,10 @@ $(document).ready(function (){
 		var cricketTrivia = '{"title":"Cricket Trivia Quiz","items":[{"question":"In 2002 who announced his retirement from international cricket having amassed a career total of 8029 runs in 128 Tests?","answer":"Mark Waugh","option":["Steve Waugh","Ian Healy","Jason Gillespie"]},{"question":"Which king declared cricket illegal in 1477?","answer":"Edward IV","option":["Charlie II","Charles I","Edward V"]},{"question":"Which country won the first Cricket World Cup in 1975?","answer":"West Indies","option":["Australia","India","South Africa"]},{"question":"In 1987 who was the last England captain of the 20th century to win an Ashes Series?","answer":"Mike Grating","option":["Ian Border","Graham Gooch","Allen Border"]},{"question":"Whose autobiography is entitled Dazzle?","answer":"Darren Gough","option":["Adam Gilchrist","Allen Border","Steve Waugh"]},{"question":"Who was the first batsman to score 10,000 runs in Test cricket?","answer":"Sunil Gavaskar","option":["Sachin Tandulkar","Brian Lara","Ricky Ponting"]},{"question":"Which former Pakistan captain scored 8800+ runs in Tests with a triple century and 11000+ runs in ODIs?","answer":"Inzamam-ul-haq","option":["Javed Miandad","Zaheer Abbas","Asif Iqbal"]},{"question":"Which fast bowler was known for his scorching yorkers, and had taken 416 wickets in 262 ODIs with a best performance of 7/36?","answer":"Waqar Younis","option":["Wasim Akram","Aaqib Javed","Shoaib Akhtar"]},{"question":"Who is one of the great leg spinners from Pakistan, having 236 wickets from 67 tests, with a best performance of 9/56?","answer":"Abdul Qadir","option":["Mushtaq Ahmed","Saqlain Mushtaq","Danish Kaneria"]},{"question":"Which team did Australia beat in their last group match thus enabling Pakistan to reach the semi-finals in the 1992 world cup?","answer":"West Indies","option":["New Zealand","England","India"]}]}';
 		
 		localStorage.setItem("Cricket Trivia Quiz",cricketTrivia);
+		
+		var checkingImageTrivia = '{"title":"Checking","items":[{"question":"../img/logo.png","answer":"Mark Waugh","option":["Steve Waugh","Ian Healy","Jason Gillespie"]}]}';
+		
+		localStorage.setItem("Checking",checkingImageTrivia);
 	}
 	storeSampleQuizzes();
 });
